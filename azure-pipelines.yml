@@ -12,6 +12,7 @@ pool:
 - task: BrowserStackStopLocal@0
 - task: BrowserStackConfig@0
   inputs:
+- task: BrowserStackResults@0
     BrowserStackServiceEndPoint: 'TEST'
     browserstackLocal: true
 steps:
