@@ -1,4 +1,5 @@
 # Starter pipeline
+- task: BrowserStackResults@0
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -8,7 +9,11 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
+- task: BrowserStackStopLocal@0
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'TEST'
+    browserstackLocal: true
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
